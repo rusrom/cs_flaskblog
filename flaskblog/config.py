@@ -2,10 +2,10 @@ import os
 
 
 class Config:
-    SECRET_KEY = 'e2be724f76268c84d1ed12d80d784af7'
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'
-    MAIL_SERVER = 'smtp.ukr.net'
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URI')
+    MAIL_SERVER = os.environ.get('MAIL_SERVER')
+    MAIL_PORT = int(os.environ.get('MAIL_PORT'))
     MAIL_USE_SSL = True
-    MAIL_PORT = 465
-    MAIL_USERNAME = os.environ.get('UKRNET_USER')
-    MAIL_PASSWORD = os.environ.get('UKRNET_PASS')
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
